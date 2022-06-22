@@ -1,0 +1,1435 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/filter.css">
+<link rel="stylesheet" href="css/nouislider.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/tailDT.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/wNumb.js"></script>
+        <script src="data/DistritoCarmendelParana_0.js"></script>
+        <script src="data/DistritoFram_1.js"></script>
+        <script src="data/DistritoMiranda_2.js"></script>
+        <script src="data/DistritoSanJuan_3.js"></script>
+        <script src="data/DistritoCambyreta_4.js"></script>
+        <script src="data/Vasdistritosaledaos_5.js"></script>
+        <script src="data/DistritoEncarnacin_6.js"></script>
+        <script src="data/RoParana_7.js"></script>
+        <script src="data/Puentes_8.js"></script>
+        <script src="data/ViasEncarnacin_9.js"></script>
+        <script src="data/VasPrincipales_10.js"></script>
+        <script src="data/ITINERARIOHORASPICOCENTRO_11.js"></script>
+        <script src="data/ITINERARIOHORASPICORURALES_12.js"></script>
+        <script src="data/ITINERARIOSPRINCIPALES_13.js"></script>
+        <script src="data/BarriosEncarnacin_14.js"></script>
+        <script src="data/Transbordos_15.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-27.356350485793257,-55.93256978075303],[-27.29489180113323,-55.800124493119654]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_DistritoCarmendelParana_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DISTRITO'] !== null ? autolinker.link(feature.properties['DISTRITO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO_DESC'] !== null ? autolinker.link(feature.properties['DPTO_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_DESC'] !== null ? autolinker.link(feature.properties['DIST_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoCarmendelParana_0_0() {
+            return {
+                pane: 'pane_DistritoCarmendelParana_0',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,223,223,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoCarmendelParana_0');
+        map.getPane('pane_DistritoCarmendelParana_0').style.zIndex = 400;
+        map.getPane('pane_DistritoCarmendelParana_0').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoCarmendelParana_0 = new L.geoJson(json_DistritoCarmendelParana_0, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoCarmendelParana_0',
+            layerName: 'layer_DistritoCarmendelParana_0',
+            pane: 'pane_DistritoCarmendelParana_0',
+            onEachFeature: pop_DistritoCarmendelParana_0,
+            style: style_DistritoCarmendelParana_0_0,
+        });
+        bounds_group.addLayer(layer_DistritoCarmendelParana_0);
+        map.addLayer(layer_DistritoCarmendelParana_0);
+        function pop_DistritoFram_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DISTRITO'] !== null ? autolinker.link(feature.properties['DISTRITO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO_DESC'] !== null ? autolinker.link(feature.properties['DPTO_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_DESC'] !== null ? autolinker.link(feature.properties['DIST_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoFram_1_0() {
+            return {
+                pane: 'pane_DistritoFram_1',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,223,223,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoFram_1');
+        map.getPane('pane_DistritoFram_1').style.zIndex = 401;
+        map.getPane('pane_DistritoFram_1').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoFram_1 = new L.geoJson(json_DistritoFram_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoFram_1',
+            layerName: 'layer_DistritoFram_1',
+            pane: 'pane_DistritoFram_1',
+            onEachFeature: pop_DistritoFram_1,
+            style: style_DistritoFram_1_0,
+        });
+        bounds_group.addLayer(layer_DistritoFram_1);
+        map.addLayer(layer_DistritoFram_1);
+        function pop_DistritoMiranda_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DISTRITO'] !== null ? autolinker.link(feature.properties['DISTRITO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO_DESC'] !== null ? autolinker.link(feature.properties['DPTO_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_DESC'] !== null ? autolinker.link(feature.properties['DIST_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoMiranda_2_0() {
+            return {
+                pane: 'pane_DistritoMiranda_2',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,223,223,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoMiranda_2');
+        map.getPane('pane_DistritoMiranda_2').style.zIndex = 402;
+        map.getPane('pane_DistritoMiranda_2').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoMiranda_2 = new L.geoJson(json_DistritoMiranda_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoMiranda_2',
+            layerName: 'layer_DistritoMiranda_2',
+            pane: 'pane_DistritoMiranda_2',
+            onEachFeature: pop_DistritoMiranda_2,
+            style: style_DistritoMiranda_2_0,
+        });
+        bounds_group.addLayer(layer_DistritoMiranda_2);
+        map.addLayer(layer_DistritoMiranda_2);
+        function pop_DistritoSanJuan_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DISTRITO'] !== null ? autolinker.link(feature.properties['DISTRITO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO_DESC'] !== null ? autolinker.link(feature.properties['DPTO_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_DESC'] !== null ? autolinker.link(feature.properties['DIST_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoSanJuan_3_0() {
+            return {
+                pane: 'pane_DistritoSanJuan_3',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,223,223,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoSanJuan_3');
+        map.getPane('pane_DistritoSanJuan_3').style.zIndex = 403;
+        map.getPane('pane_DistritoSanJuan_3').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoSanJuan_3 = new L.geoJson(json_DistritoSanJuan_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoSanJuan_3',
+            layerName: 'layer_DistritoSanJuan_3',
+            pane: 'pane_DistritoSanJuan_3',
+            onEachFeature: pop_DistritoSanJuan_3,
+            style: style_DistritoSanJuan_3_0,
+        });
+        bounds_group.addLayer(layer_DistritoSanJuan_3);
+        map.addLayer(layer_DistritoSanJuan_3);
+        function pop_DistritoCambyreta_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO'] !== null ? autolinker.link(feature.properties['DPTO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DISTRITO'] !== null ? autolinker.link(feature.properties['DISTRITO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DPTO_DESC'] !== null ? autolinker.link(feature.properties['DPTO_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DIST_DESC'] !== null ? autolinker.link(feature.properties['DIST_DESC'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoCambyreta_4_0() {
+            return {
+                pane: 'pane_DistritoCambyreta_4',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(223,223,223,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoCambyreta_4');
+        map.getPane('pane_DistritoCambyreta_4').style.zIndex = 404;
+        map.getPane('pane_DistritoCambyreta_4').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoCambyreta_4 = new L.geoJson(json_DistritoCambyreta_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoCambyreta_4',
+            layerName: 'layer_DistritoCambyreta_4',
+            pane: 'pane_DistritoCambyreta_4',
+            onEachFeature: pop_DistritoCambyreta_4,
+            style: style_DistritoCambyreta_4_0,
+        });
+        bounds_group.addLayer(layer_DistritoCambyreta_4);
+        map.addLayer(layer_DistritoCambyreta_4);
+        function pop_Vasdistritosaledaos_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMBRE'] !== null ? autolinker.link(feature.properties['NOMBRE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ANCHO'] !== null ? autolinker.link(feature.properties['ANCHO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Vasdistritosaledaos_5_0() {
+            return {
+                pane: 'pane_Vasdistritosaledaos_5',
+                opacity: 1,
+                color: 'rgba(242,242,242,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Vasdistritosaledaos_5');
+        map.getPane('pane_Vasdistritosaledaos_5').style.zIndex = 405;
+        map.getPane('pane_Vasdistritosaledaos_5').style['mix-blend-mode'] = 'normal';
+        var layer_Vasdistritosaledaos_5 = new L.geoJson(json_Vasdistritosaledaos_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Vasdistritosaledaos_5',
+            layerName: 'layer_Vasdistritosaledaos_5',
+            pane: 'pane_Vasdistritosaledaos_5',
+            onEachFeature: pop_Vasdistritosaledaos_5,
+            style: style_Vasdistritosaledaos_5_0,
+        });
+        bounds_group.addLayer(layer_Vasdistritosaledaos_5);
+        map.addLayer(layer_Vasdistritosaledaos_5);
+        function pop_DistritoEncarnacin_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AREA'] !== null ? autolinker.link(feature.properties['AREA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_DistritoEncarnacin_6_0() {
+            return {
+                pane: 'pane_DistritoEncarnacin_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DistritoEncarnacin_6');
+        map.getPane('pane_DistritoEncarnacin_6').style.zIndex = 406;
+        map.getPane('pane_DistritoEncarnacin_6').style['mix-blend-mode'] = 'normal';
+        var layer_DistritoEncarnacin_6 = new L.geoJson(json_DistritoEncarnacin_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DistritoEncarnacin_6',
+            layerName: 'layer_DistritoEncarnacin_6',
+            pane: 'pane_DistritoEncarnacin_6',
+            onEachFeature: pop_DistritoEncarnacin_6,
+            style: style_DistritoEncarnacin_6_0,
+        });
+        bounds_group.addLayer(layer_DistritoEncarnacin_6);
+        map.addLayer(layer_DistritoEncarnacin_6);
+        function pop_RoParana_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['area'] !== null ? autolinker.link(feature.properties['area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RoParana_7_0() {
+            return {
+                pane: 'pane_RoParana_7',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(191,216,245,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_RoParana_7');
+        map.getPane('pane_RoParana_7').style.zIndex = 407;
+        map.getPane('pane_RoParana_7').style['mix-blend-mode'] = 'normal';
+        var layer_RoParana_7 = new L.geoJson(json_RoParana_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_RoParana_7',
+            layerName: 'layer_RoParana_7',
+            pane: 'pane_RoParana_7',
+            onEachFeature: pop_RoParana_7,
+            style: style_RoParana_7_0,
+        });
+        bounds_group.addLayer(layer_RoParana_7);
+        map.addLayer(layer_RoParana_7);
+        function pop_Puentes_8(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Puentes_8_0() {
+            return {
+                pane: 'pane_Puentes_8',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Puentes_8');
+        map.getPane('pane_Puentes_8').style.zIndex = 408;
+        map.getPane('pane_Puentes_8').style['mix-blend-mode'] = 'normal';
+        var layer_Puentes_8 = new L.geoJson(json_Puentes_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Puentes_8',
+            layerName: 'layer_Puentes_8',
+            pane: 'pane_Puentes_8',
+            onEachFeature: pop_Puentes_8,
+            style: style_Puentes_8_0,
+        });
+        bounds_group.addLayer(layer_Puentes_8);
+        map.addLayer(layer_Puentes_8);
+        function pop_ViasEncarnacin_9(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMBRE'] !== null ? autolinker.link(feature.properties['NOMBRE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ANCHO'] !== null ? autolinker.link(feature.properties['ANCHO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ViasEncarnacin_9_0() {
+            return {
+                pane: 'pane_ViasEncarnacin_9',
+                opacity: 1,
+                color: 'rgba(223,223,223,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ViasEncarnacin_9');
+        map.getPane('pane_ViasEncarnacin_9').style.zIndex = 409;
+        map.getPane('pane_ViasEncarnacin_9').style['mix-blend-mode'] = 'normal';
+        var layer_ViasEncarnacin_9 = new L.geoJson(json_ViasEncarnacin_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ViasEncarnacin_9',
+            layerName: 'layer_ViasEncarnacin_9',
+            pane: 'pane_ViasEncarnacin_9',
+            onEachFeature: pop_ViasEncarnacin_9,
+            style: style_ViasEncarnacin_9_0,
+        });
+        bounds_group.addLayer(layer_ViasEncarnacin_9);
+        map.addLayer(layer_ViasEncarnacin_9);
+        function pop_VasPrincipales_10(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMBRE'] !== null ? autolinker.link(feature.properties['NOMBRE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LONG_KM_EN'] !== null ? autolinker.link(feature.properties['LONG_KM_EN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['RUTA_NRO'] !== null ? autolinker.link(feature.properties['RUTA_NRO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ANCHO'] !== null ? autolinker.link(feature.properties['ANCHO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TIPO'] !== null ? autolinker.link(feature.properties['TIPO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LONG_MTS'] !== null ? autolinker.link(feature.properties['LONG_MTS'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_VasPrincipales_10_0() {
+            return {
+                pane: 'pane_VasPrincipales_10',
+                opacity: 1,
+                color: 'rgba(111,111,111,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_VasPrincipales_10');
+        map.getPane('pane_VasPrincipales_10').style.zIndex = 410;
+        map.getPane('pane_VasPrincipales_10').style['mix-blend-mode'] = 'normal';
+        var layer_VasPrincipales_10 = new L.geoJson(json_VasPrincipales_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_VasPrincipales_10',
+            layerName: 'layer_VasPrincipales_10',
+            pane: 'pane_VasPrincipales_10',
+            onEachFeature: pop_VasPrincipales_10,
+            style: style_VasPrincipales_10_0,
+        });
+        bounds_group.addLayer(layer_VasPrincipales_10);
+        map.addLayer(layer_VasPrincipales_10);
+        function pop_ITINERARIOHORASPICOCENTRO_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(feature.properties['Nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">6h a 8h</th>\
+                        <td>' + (feature.properties['6h a 8h'] !== null ? autolinker.link(feature.properties['6h a 8h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">14h a 17h</th>\
+                        <td>' + (feature.properties['14h a 17h'] !== null ? autolinker.link(feature.properties['14h a 17h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">17h a 19h</th>\
+                        <td>' + (feature.properties['17h a 19h'] !== null ? autolinker.link(feature.properties['17h a 19h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">19h a 23h</th>\
+                        <td>' + (feature.properties['19h a 23h'] !== null ? autolinker.link(feature.properties['19h a 23h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ITINERARIOHORASPICOCENTRO_11_0(feature) {
+            switch(String(feature.properties['Nombre'])) {
+                case 'Hora Pico Circular Peninsula + UNI':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICOCENTRO_11',
+                opacity: 1,
+                color: 'rgba(126,163,205,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Troncal Ruta 6 + Circuito':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICOCENTRO_11',
+                opacity: 1,
+                color: 'rgba(2,44,92,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ITINERARIOHORASPICOCENTRO_11');
+        map.getPane('pane_ITINERARIOHORASPICOCENTRO_11').style.zIndex = 411;
+        map.getPane('pane_ITINERARIOHORASPICOCENTRO_11').style['mix-blend-mode'] = 'normal';
+        var layer_ITINERARIOHORASPICOCENTRO_11 = new L.geoJson(json_ITINERARIOHORASPICOCENTRO_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ITINERARIOHORASPICOCENTRO_11',
+            layerName: 'layer_ITINERARIOHORASPICOCENTRO_11',
+            pane: 'pane_ITINERARIOHORASPICOCENTRO_11',
+            onEachFeature: pop_ITINERARIOHORASPICOCENTRO_11,
+            style: style_ITINERARIOHORASPICOCENTRO_11_0,
+        });
+        bounds_group.addLayer(layer_ITINERARIOHORASPICOCENTRO_11);
+        map.addLayer(layer_ITINERARIOHORASPICOCENTRO_11);
+        function pop_ITINERARIOHORASPICORURALES_12(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(feature.properties['Nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">06 hs</th>\
+                        <td>' + (feature.properties['06 hs'] !== null ? autolinker.link(feature.properties['06 hs'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">12 hs</th>\
+                        <td>' + (feature.properties['12 hs'] !== null ? autolinker.link(feature.properties['12 hs'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">18 hs</th>\
+                        <td>' + (feature.properties['18 hs'] !== null ? autolinker.link(feature.properties['18 hs'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ITINERARIOHORASPICORURALES_12_0(feature) {
+            switch(String(feature.properties['Nombre'])) {
+                case 'Hora Pico Ramal rural Cuatro Potrero':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural Itangua':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural San Antonio Ypecuru':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural San Blas Independencia':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(130,181,146,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural Santo Domingo':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural Sta. María Santillán':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Hora Pico Ramal rural Sta. maría sector 3':
+                    return {
+                pane: 'pane_ITINERARIOHORASPICORURALES_12',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '1,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ITINERARIOHORASPICORURALES_12');
+        map.getPane('pane_ITINERARIOHORASPICORURALES_12').style.zIndex = 412;
+        map.getPane('pane_ITINERARIOHORASPICORURALES_12').style['mix-blend-mode'] = 'normal';
+        var layer_ITINERARIOHORASPICORURALES_12 = new L.geoJson(json_ITINERARIOHORASPICORURALES_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ITINERARIOHORASPICORURALES_12',
+            layerName: 'layer_ITINERARIOHORASPICORURALES_12',
+            pane: 'pane_ITINERARIOHORASPICORURALES_12',
+            onEachFeature: pop_ITINERARIOHORASPICORURALES_12,
+            style: style_ITINERARIOHORASPICORURALES_12_0,
+        });
+        bounds_group.addLayer(layer_ITINERARIOHORASPICORURALES_12);
+        map.addLayer(layer_ITINERARIOHORASPICORURALES_12);
+        function pop_ITINERARIOSPRINCIPALES_13(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nombre'] !== null ? autolinker.link(feature.properties['Nombre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">6h a 8h</th>\
+                        <td>' + (feature.properties['6h a 8h'] !== null ? autolinker.link(feature.properties['6h a 8h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">8h a 12h</th>\
+                        <td>' + (feature.properties['8h a 12h'] !== null ? autolinker.link(feature.properties['8h a 12h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">12h a 14h</th>\
+                        <td>' + (feature.properties['12h a 14h'] !== null ? autolinker.link(feature.properties['12h a 14h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">14h a 17h</th>\
+                        <td>' + (feature.properties['14h a 17h'] !== null ? autolinker.link(feature.properties['14h a 17h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">17h a 19h</th>\
+                        <td>' + (feature.properties['17h a 19h'] !== null ? autolinker.link(feature.properties['17h a 19h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">19h a 23h</th>\
+                        <td>' + (feature.properties['19h a 23h'] !== null ? autolinker.link(feature.properties['19h a 23h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">5h a 6h</th>\
+                        <td>' + (feature.properties['5h a 6h'] !== null ? autolinker.link(feature.properties['5h a 6h'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ITINERARIOSPRINCIPALES_13_0(feature) {
+            switch(String(feature.properties['Nombre'])) {
+                case 'Circular Arroyo Pora':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Circular Ita Paso':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Circular Península':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(126,163,205,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Circular San Juan del Paraná':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(255,167,158,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Circular Santo Domingo':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Circular Sta. María/Chaipe':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Conexión Cambyreta':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(255,167,158,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Inter Playas por temporada':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(126,163,205,1.0)',
+                dashArray: '10,5',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Ramal Capitán Miranda':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(254,230,68,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Ramal Curupayty/Kennedy':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Ramal San Isidro':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(130,181,146,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Ramal Sta. María/María Auxiliadora':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Troncal Ruta 1':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(2,44,92,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Troncal Ruta 6':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(2,44,92,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Tronco Ramal Pacu Cua':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(130,181,146,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Tronco Ramal San Isidro':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(130,181,146,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Tronco Ramal San Pedro Etapas - Centro':
+                    return {
+                pane: 'pane_ITINERARIOSPRINCIPALES_13',
+                opacity: 1,
+                color: 'rgba(247,178,103,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_ITINERARIOSPRINCIPALES_13');
+        map.getPane('pane_ITINERARIOSPRINCIPALES_13').style.zIndex = 413;
+        map.getPane('pane_ITINERARIOSPRINCIPALES_13').style['mix-blend-mode'] = 'normal';
+        var layer_ITINERARIOSPRINCIPALES_13 = new L.geoJson(json_ITINERARIOSPRINCIPALES_13, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ITINERARIOSPRINCIPALES_13',
+            layerName: 'layer_ITINERARIOSPRINCIPALES_13',
+            pane: 'pane_ITINERARIOSPRINCIPALES_13',
+            onEachFeature: pop_ITINERARIOSPRINCIPALES_13,
+            style: style_ITINERARIOSPRINCIPALES_13_0,
+        });
+        bounds_group.addLayer(layer_ITINERARIOSPRINCIPALES_13);
+        map.addLayer(layer_ITINERARIOSPRINCIPALES_13);
+        function pop_BarriosEncarnacin_14(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Numero'] !== null ? autolinker.link(feature.properties['Numero'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Barrio'] !== null ? autolinker.link(feature.properties['Barrio'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Area (ha)'] !== null ? autolinker.link(feature.properties['Area (ha)'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_BarriosEncarnacin_14_0() {
+            return {
+                pane: 'pane_BarriosEncarnacin_14',
+                stroke: false, 
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_BarriosEncarnacin_14');
+        map.getPane('pane_BarriosEncarnacin_14').style.zIndex = 414;
+        map.getPane('pane_BarriosEncarnacin_14').style['mix-blend-mode'] = 'normal';
+        var layer_BarriosEncarnacin_14 = new L.geoJson(json_BarriosEncarnacin_14, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_BarriosEncarnacin_14',
+            layerName: 'layer_BarriosEncarnacin_14',
+            pane: 'pane_BarriosEncarnacin_14',
+            onEachFeature: pop_BarriosEncarnacin_14,
+            style: style_BarriosEncarnacin_14_0,
+        });
+        bounds_group.addLayer(layer_BarriosEncarnacin_14);
+        map.addLayer(layer_BarriosEncarnacin_14);
+        function pop_Transbordos_15(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Transbordos_15_0() {
+            return {
+                pane: 'pane_Transbordos_15',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_Transbordos_15');
+        map.getPane('pane_Transbordos_15').style.zIndex = 415;
+        map.getPane('pane_Transbordos_15').style['mix-blend-mode'] = 'normal';
+        var layer_Transbordos_15 = new L.geoJson(json_Transbordos_15, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Transbordos_15',
+            layerName: 'layer_Transbordos_15',
+            pane: 'pane_Transbordos_15',
+            onEachFeature: pop_Transbordos_15,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Transbordos_15_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Transbordos_15);
+        map.addLayer(layer_Transbordos_15);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/Transbordos_15.png" /> Transbordos': layer_Transbordos_15,'<img src="legend/BarriosEncarnacin_14.png" /> Barrios Encarnación': layer_BarriosEncarnacin_14,'ITINERARIOS PRINCIPALES<br /><table><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularArroyoPora0.png" /></td><td>Circular Arroyo Pora</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularItaPaso1.png" /></td><td>Circular Ita Paso</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularPenínsula2.png" /></td><td>Circular Península</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularSanJuandelParaná3.png" /></td><td>Circular San Juan del Paraná</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularSantoDomingo4.png" /></td><td>Circular Santo Domingo</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_CircularStaMaríaChaipe5.png" /></td><td>Circular Sta. María/Chaipe</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_ConexiónCambyreta6.png" /></td><td>Conexión Cambyreta</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_InterPlayas7.png" /></td><td>Inter Playas</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_RamalCapitánMiranda8.png" /></td><td>Ramal Capitán Miranda</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_RamalCurupaytyKennedy9.png" /></td><td>Ramal Curupayty/Kennedy</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_RamalSanIsidro10.png" /></td><td>Ramal San Isidro</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_RamalStaMaríaMaríaAuxiliadora11.png" /></td><td>Ramal Sta. María/María Auxiliadora</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_TroncalRuta112.png" /></td><td>Troncal Ruta 1</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_TroncalRuta613.png" /></td><td>Troncal Ruta 6</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_TroncoRamalPacuCua14.png" /></td><td>Tronco Ramal Pacu Cua</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_TroncoRamalSanIsidro15.png" /></td><td>Tronco Ramal San Isidro</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOSPRINCIPALES_13_TroncoRamalSanPedroEtapasCentro16.png" /></td><td>Tronco Ramal San Pedro Etapas - Centro</td></tr></table>': layer_ITINERARIOSPRINCIPALES_13,'ITINERARIO HORAS PICO RURALES<br /><table><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralCuatroPotrero0.png" /></td><td>Hora Pico Ramal rural Cuatro Potrero</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralItangua1.png" /></td><td>Hora Pico Ramal rural Itangua</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralSanAntonioYpecuru2.png" /></td><td>Hora Pico Ramal rural San Antonio Ypecuru</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralSanBlasIndependencia3.png" /></td><td>Hora Pico Ramal rural San Blas Independencia</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralSantoDomingo4.png" /></td><td>Hora Pico Ramal rural Santo Domingo</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralStaMaríaSantillán5.png" /></td><td>Hora Pico Ramal rural Sta. María Santillán</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICORURALES_12_HoraPicoRamalruralStaMaríasector36.png" /></td><td>Hora Pico Ramal rural Sta. María sector 3</td></tr></table>': layer_ITINERARIOHORASPICORURALES_12,'ITINERARIO HORAS PICO CENTRO<br /><table><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICOCENTRO_11_HoraPicoCircularPeninsulaUNI0.png" /></td><td>Hora Pico Circular Peninsula + UNI</td></tr><tr><td style="text-align: center;"><img src="legend/ITINERARIOHORASPICOCENTRO_11_HoraPicoTroncalRuta6Circuito1.png" /></td><td>Hora Pico Troncal Ruta 6 + Circuito</td></tr></table>': layer_ITINERARIOHORASPICOCENTRO_11,'<img src="legend/VasPrincipales_10.png" /> Vías Principales': layer_VasPrincipales_10,'<img src="legend/ViasEncarnacin_9.png" /> Vias Encarnación': layer_ViasEncarnacin_9,'<img src="legend/Puentes_8.png" /> Puentes': layer_Puentes_8,'<img src="legend/RoParana_7.png" /> Río Parana': layer_RoParana_7,'<img src="legend/DistritoEncarnacin_6.png" /> Distrito Encarnación': layer_DistritoEncarnacin_6,'<img src="legend/Vasdistritosaledaos_5.png" /> Vías distritos aledaños': layer_Vasdistritosaledaos_5,'<img src="legend/DistritoCambyreta_4.png" /> Distrito Cambyreta': layer_DistritoCambyreta_4,'<img src="legend/DistritoSanJuan_3.png" /> Distrito San Juan': layer_DistritoSanJuan_3,'<img src="legend/DistritoMiranda_2.png" /> Distrito Miranda': layer_DistritoMiranda_2,'<img src="legend/DistritoFram_1.png" /> Distrito Fram': layer_DistritoFram_1,'<img src="legend/DistritoCarmendelParana_0.png" /> Distrito Carmen del Parana': layer_DistritoCarmendelParana_0,}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_DistritoCarmendelParana_0.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoCarmendelParana_0'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoFram_1.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoFram_1'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoMiranda_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoMiranda_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoSanJuan_3.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoSanJuan_3'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoCambyreta_4.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoCambyreta_4'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_VasPrincipales_10.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #000000; font-size: 7pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_VasPrincipales_10'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_BarriosEncarnacin_14.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Barrio'] !== null?String('<div style="color: #000000; font-size: 6pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Barrio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BarriosEncarnacin_14'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var mapDiv = document.getElementById('map');
+        var row = document.createElement('div');
+        row.className="row";
+        row.id="all";
+        row.style.height = "100%";
+        var col1 = document.createElement('div');
+        col1.className="col9";
+        col1.id = "mapWindow";
+        col1.style.height = "99%";
+        col1.style.width = "80%";
+        col1.style.display = "inline-block";
+        var col2 = document.createElement('div');
+        col2.className="col3";
+        col2.id = "menu";
+        col2.style.display = "inline-block";
+        mapDiv.parentNode.insertBefore(row, mapDiv);
+        document.getElementById("all").appendChild(col1);
+        document.getElementById("all").appendChild(col2);
+        col1.appendChild(mapDiv)
+        var Filters = {"Nombre": "str"};
+        function filterFunc() {
+          map.eachLayer(function(lyr){
+          if ("options" in lyr && "dataVar" in lyr["options"]){
+            features = this[lyr["options"]["dataVar"]].features.slice(0);
+            try{
+              for (key in Filters){
+                keyS = key.replace(/[^a-zA-Z0-9_]/g, "")
+                if (Filters[key] == "str" || Filters[key] == "bool"){
+                  var selection = [];
+                  var options = document.getElementById("sel_" + keyS).options
+                  for (var i=0; i < options.length; i++) {
+                    if (options[i].selected) selection.push(options[i].value);
+                  }
+                    try{
+                      if (key in features[0].properties){
+                        for (i = features.length - 1;
+                          i >= 0; --i){
+                          if (selection.indexOf(
+                          features[i].properties[key])<0
+                          && selection.length>0) {
+                          features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                  }
+                }
+                if (Filters[key] == "int"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (parseInt(features[i].properties[key])
+                          < sliderVals[0]
+                          || parseInt(features[i].properties[key])
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "real"){
+                  sliderVals =  document.getElementById(
+                    "div_" + keyS).noUiSlider.get();
+                  try{
+                    if (key in features[0].properties){
+                    for (i = features.length - 1; i >= 0; --i){
+                      if (features[i].properties[key]
+                          < sliderVals[0]
+                          || features[i].properties[key]
+                          > sliderVals[1]){
+                            features.splice(i,1);
+                          }
+                        }
+                      }
+                    } catch(err){
+                    }
+                  }
+                if (Filters[key] == "date"
+                  || Filters[key] == "datetime"
+                  || Filters[key] == "time"){
+                  try{
+                    if (key in features[0].properties){
+                      HTMLkey = key.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '');
+                      startdate = document.getElementById("dat_" +
+                        HTMLkey + "_date1").value.replace(" ", "T");
+                      enddate = document.getElementById("dat_" +
+                        HTMLkey + "_date2").value.replace(" ", "T");
+                      for (i = features.length - 1; i >= 0; --i){
+                        if (features[i].properties[key] < startdate
+                          || features[i].properties[key] > enddate){
+                          features.splice(i,1);
+                        }
+                      }
+                    }
+                  } catch(err){
+                  }
+                }
+              }
+            } catch(err){
+            }
+          this[lyr["options"]["layerName"]].clearLayers();
+          this[lyr["options"]["layerName"]].addData(features);
+        var i = 0;
+        layer_DistritoCarmendelParana_0.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoCarmendelParana_0'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoFram_1.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoFram_1'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoMiranda_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoMiranda_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoSanJuan_3.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoSanJuan_3'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_DistritoCambyreta_4.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['DIST_DESC'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['DIST_DESC']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_DistritoCambyreta_4'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_VasPrincipales_10.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #000000; font-size: 7pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_VasPrincipales_10'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_BarriosEncarnacin_14.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Barrio'] !== null?String('<div style="color: #000000; font-size: 6pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Barrio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_BarriosEncarnacin_14'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+          }
+          })
+        }
+            document.getElementById("menu").appendChild(
+                document.createElement("div"));
+            var div_Nombre = document.createElement('div');
+            div_Nombre.id = "div_Nombre";
+            div_Nombre.className= "filterselect";
+            document.getElementById("menu").appendChild(div_Nombre);
+            sel_Nombre = document.createElement('select');
+            sel_Nombre.multiple = true;
+            sel_Nombre.size = 10;
+            sel_Nombre.id = "sel_Nombre";
+            var Nombre_options_str = "<option value='' unselected></option>";
+            sel_Nombre.onchange = function(){filterFunc()};
+            Nombre_options_str  += '<option value="Circular Arroyo Pora">Circular Arroyo Pora</option>';
+            Nombre_options_str  += '<option value="Circular Ita Paso">Circular Ita Paso</option>';
+            Nombre_options_str  += '<option value="Circular Península">Circular Península</option>';
+            Nombre_options_str  += '<option value="Circular San Juan del Paraná">Circular San Juan del Paraná</option>';
+            Nombre_options_str  += '<option value="Circular Santo Domingo">Circular Santo Domingo</option>';
+            Nombre_options_str  += '<option value="Circular Sta. María/Chaipe">Circular Sta. María/Chaipe</option>';
+            Nombre_options_str  += '<option value="Conexión Cambyreta">Conexión Cambyreta</option>';
+            Nombre_options_str  += '<option value="Hora Pico Circular Peninsula + UNI">Hora Pico Circular Peninsula + UNI</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural Cuatro Potrero">Hora Pico Ramal rural Cuatro Potrero</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural Itangua">Hora Pico Ramal rural Itangua</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural San Antonio Ypecuru">Hora Pico Ramal rural San Antonio Ypecuru</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural San Blas Independencia">Hora Pico Ramal rural San Blas Independencia</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural Santo Domingo">Hora Pico Ramal rural Santo Domingo</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural Sta. María Santillán">Hora Pico Ramal rural Sta. María Santillán</option>';
+            Nombre_options_str  += '<option value="Hora Pico Ramal rural Sta. maría sector 3">Hora Pico Ramal rural Sta. maría sector 3</option>';
+            Nombre_options_str  += '<option value="Hora Pico Troncal Ruta 6 + Circuito">Hora Pico Troncal Ruta 6 + Circuito</option>';
+            Nombre_options_str  += '<option value="Inter Playas por temporada">Inter Playas por temporada</option>';
+            Nombre_options_str  += '<option value="Ramal Capitán Miranda">Ramal Capitán Miranda</option>';
+            Nombre_options_str  += '<option value="Ramal Curupayty/Kennedy">Ramal Curupayty/Kennedy</option>';
+            Nombre_options_str  += '<option value="Ramal San Isidro">Ramal San Isidro</option>';
+            Nombre_options_str  += '<option value="Ramal Sta. María/María Auxiliadora">Ramal Sta. María/María Auxiliadora</option>';
+            Nombre_options_str  += '<option value="Troncal Ruta 1">Troncal Ruta 1</option>';
+            Nombre_options_str  += '<option value="Troncal Ruta 6">Troncal Ruta 6</option>';
+            Nombre_options_str  += '<option value="Tronco Ramal Pacu Cua">Tronco Ramal Pacu Cua</option>';
+            Nombre_options_str  += '<option value="Tronco Ramal San Isidro">Tronco Ramal San Isidro</option>';
+            Nombre_options_str  += '<option value="Tronco Ramal San Pedro Etapas - Centro">Tronco Ramal San Pedro Etapas - Centro</option>';
+            sel_Nombre.innerHTML = Nombre_options_str;
+            div_Nombre.appendChild(sel_Nombre);
+            var lab_Nombre = document.createElement('div');
+            lab_Nombre.innerHTML = 'Nombre';
+            lab_Nombre.className = 'filterlabel';
+            div_Nombre.appendChild(lab_Nombre);
+            var reset_Nombre = document.createElement('div');
+            reset_Nombre.innerHTML = 'clear filter';
+            reset_Nombre.className = 'filterlabel';
+            reset_Nombre.onclick = function() {
+                var options = document.getElementById("sel_Nombre").options;
+                for (var i=0; i < options.length; i++) {
+                    options[i].selected = false;
+                }
+                filterFunc();
+            };
+            div_Nombre.appendChild(reset_Nombre);
+        resetLabels([layer_DistritoCarmendelParana_0,layer_DistritoFram_1,layer_DistritoMiranda_2,layer_DistritoSanJuan_3,layer_DistritoCambyreta_4,layer_VasPrincipales_10,layer_BarriosEncarnacin_14]);
+        map.on("zoomend", function(){
+            resetLabels([layer_DistritoCarmendelParana_0,layer_DistritoFram_1,layer_DistritoMiranda_2,layer_DistritoSanJuan_3,layer_DistritoCambyreta_4,layer_VasPrincipales_10,layer_BarriosEncarnacin_14]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_DistritoCarmendelParana_0,layer_DistritoFram_1,layer_DistritoMiranda_2,layer_DistritoSanJuan_3,layer_DistritoCambyreta_4,layer_VasPrincipales_10,layer_BarriosEncarnacin_14]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_DistritoCarmendelParana_0,layer_DistritoFram_1,layer_DistritoMiranda_2,layer_DistritoSanJuan_3,layer_DistritoCambyreta_4,layer_VasPrincipales_10,layer_BarriosEncarnacin_14]);
+        });
+        </script>
+    </body>
+</html>
